@@ -15,33 +15,40 @@ Connect your knock sensor module on Analog Pin 0, according to instructions [her
 
 Declare a callback method that will execute everytime a knock is detected.
 ```cpp
-void callback(float, long);
+void onKnockReceived(float, long);
 ```
 Declare the two parameters <b>lowThreshold</b> and <b>noiseThreshold</b>
 ```cpp
 int lowThreshold = 10; // The lowest value a transient is permitted to have
 int noiseThreshold = 3; // Used to filter out analogRead noise
 ```
-Create an instance of <b>KnockAlgorithm</b>
+Create an instance of <b>KnockDetector</b>
 ```cpp
-KnockAlgorithm knockAlgorithm(lowThreshold, noiseThreshold, callback);
+KnockDetector knockDetector(lowThreshold, noiseThreshold, callback);
+```
+Define your callback functionality:
+```cpp
+void onKnockReceived(float knockIntensity, long pulseLength) {
+  // do something when a knock is received
+  // optionally do something with the two values
+}
 ```
 <b>loop()</b> Function:
 ```cpp
 void loop() {
-    knockAlgorithm.loop(analogRead(A0)) // Or use another analog pin
+    knockDetector.loop(analogRead(A0)) // Or use another analog pin
 }
 ```
 
 ### Example sketch
 
 ```cpp
-#include "src/KnockAlgorithm.h"
+#include <KnockDetector.h>
 
 const int sensorInputPin = A0;
 
-void callback(float, long) {}
-KnockAlgorithm knockAlgorithm(20, 5, callback);
+void callback(float, long);
+KnockDetector knockDetector(20, 5, callback);
 
 void callback(float knockIntensity, long pulseLength) {
   Serial.println("Knock detected!");
@@ -54,7 +61,7 @@ void setup() {
 }
 
 void loop() {
-    knockAlgorithm.loop(analogRead(piezoInputPin));
+    knockDetector.loop(analogRead(piezoInputPin));
 }
 ```
 

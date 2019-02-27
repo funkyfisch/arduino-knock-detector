@@ -1,6 +1,6 @@
-#include "KnockAlgorithm.h"
+#include "KnockDetector.h"
 
-KnockAlgorithm::KnockAlgorithm(int lowThreshold, int noiseThreshold, CALLBACK) {
+KnockDetector::KnockDetector(int lowThreshold, int noiseThreshold, CALLBACK) {
     _reading = 0;
     _isAwaitingKnockTransient = true;
     _lowThreshold = lowThreshold;
@@ -13,14 +13,14 @@ KnockAlgorithm::KnockAlgorithm(int lowThreshold, int noiseThreshold, CALLBACK) {
     setCallback(callback);
 }
 
-KnockAlgorithm& KnockAlgorithm::setCallback(CALLBACK) {
+KnockDetector& KnockDetector::setCallback(CALLBACK) {
     this->callback = callback;
     return *this;
 }
 
 // This needs to be constantly called with a reading that is provided by analog input
 // at the front end script
-void KnockAlgorithm::loop(int reading) {
+void KnockDetector::loop(int reading) {
     _reading = reading;
     // Update the silence timer so that we timeout if needed
     _silenceEndTime = micros();

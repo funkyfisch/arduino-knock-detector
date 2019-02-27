@@ -1,5 +1,5 @@
-#ifndef KnockAlgorithm_h
-#define KnockAlgorithm_h
+#ifndef KnockDetector_h
+#define KnockDetector_h
 
 #if defined(ESP8266) || defined(ESP32)
 #include <functional>
@@ -13,13 +13,13 @@
 
 #include "KnockPulse.h"
 
-class KnockAlgorithm {
+class KnockDetector {
     
     public:
-        KnockAlgorithm(int lowThreshold, int noiseThreshold, CALLBACK);
+        KnockDetector(int lowThreshold, int noiseThreshold, CALLBACK);
         void loop(int reading);
 
-        KnockAlgorithm& setCallback(CALLBACK);
+        KnockDetector& setCallback(CALLBACK);
         
     private:
         CALLBACK;

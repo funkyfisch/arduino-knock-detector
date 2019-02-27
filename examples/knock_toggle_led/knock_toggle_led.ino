@@ -8,7 +8,7 @@
  and the LED will instantly toggle ON or OFF.
 */
 
-#include <KnockAlgorithm.h>
+#include <KnockDetector.h>
 
 const int piezoInputPin = A0;
 int piezoInputSignal = 0;
@@ -22,7 +22,7 @@ void callback(float knockIntensity, long pulseLength) {
   Serial.print("Knock Pulse length: ");Serial.println(pulseLength);
 }
 
-KnockAlgorithm knockAlgorithm(20, 5, callback);
+KnockDetector knockDetector(20, 5, callback);
 
 void setup() {
   pinMode(BUILTIN_LED, OUTPUT);     // Initialize the BUILTIN_LED pin as an output
@@ -30,5 +30,5 @@ void setup() {
 }
 
 void loop() {
-  knockAlgorithm.loop(analogRead(piezoInputPin));
+  knockDetector.loop(analogRead(piezoInputPin));
 }
