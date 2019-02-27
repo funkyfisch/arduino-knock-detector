@@ -6,8 +6,15 @@
         "type": "git",
         "url": "https://github.com/funkyfisch/arduino-knock-detector"
     },
-    "version": "1.0",
+    "version": "1.0.0",
+    "author": {
+        "name": "Ioannis Gkikas"
+    },
     "examples": "examples/*/*.ino",
+    "exclude": [
+        "scripts",
+        "test"
+      ],
     "frameworks": "arduino",
     "platforms": [
         "atmelavr",

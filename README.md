@@ -74,7 +74,7 @@ Simply reading the raw values does not provide context or continuity (e.g. we do
 
 ## TODOs
 ### Refactoring
- - Define proper single name to be used for Arduino Library manager, repository, etc
+ - ~~Define proper single name to be used for Arduino Library manager, repository, etc~~
  - Get rid of arduino platform dependencies
  - Write unit tests
  - Decouple algorithm from the entrypoint module
@@ -87,10 +87,17 @@ Simply reading the raw values does not provide context or continuity (e.g. we do
  - where a value followed by a bigger value is treated as a separate signal
  - Handle micros() reset to 0
 
+### CI
+ - Add merge job on circle CI
+ - Add pull request job on circle CI
+ - Create build scripts
+
 ### Documentation
+ - ~~Publish library to Arduino Library Manager~~
  - Add entry for platform.io
  - Add example with two sensors at the same time (led array)
- - Add sketches/schematics
+ - Add drawings/schematics
+ - Add keywords.txt for highlighting on Arduino IDE
 
 ### Features
  - Provide a calculation of the peak amplitude based on mVolts
