@@ -65,15 +65,27 @@ The advantages of this method is that instead of having raw values thrown out by
 
 Simply reading the raw values does not provide context or continuity (e.g. we do not know whether a random set of values refers to the same physical knock or are parts of different signals).
 
- - [] Get rid of arduino platform dependencies
- - [] Write unit tests
-// TODO: decouple algorithm from the entrypoint module
-// TODO: define readable state machines
+## TODOs
+### Refactoring
+ - Define proper single name to be used for Arduino Library manager, repository, etc
+ - Get rid of arduino platform dependencies
+ - Write unit tests
+ - Decouple algorithm from the entrypoint module
+ - Define readable state machines
+ - Proper reassignment of _knockPulse object instead of having singleton
+ - Use JLED library as a golden sample for ci and config
 
-// TODO: exchange the "silence timeout" algorithm to a logic check
-// where a value followed by a bigger value is treated as a separate signal
-// TODO: handle micros() reset to 0
-// TODO: proper reassignment of _knockPulse object instead of having singleton
-// TODO: provide a calculation of the peak amplitude based on mVolts
-// TODO: use JLED library as a golden sample for ci and config
-// TODO: add entry for platform.io
+### Algorithm issues
+ - Exchange the "silence timeout" algorithm to a logic check
+ - where a value followed by a bigger value is treated as a separate signal
+ - Handle micros() reset to 0
+
+### Documentation
+ - Add entry for platform.io
+ - Add example with two sensors at the same time (led array)
+ - Add sketches/schematics
+
+### Features
+ - Provide a calculation of the peak amplitude based on mVolts
+ - Provide a "calibration" sequence
+ - Augment above calibration sequence with ML 
