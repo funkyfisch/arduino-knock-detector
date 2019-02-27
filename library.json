@@ -1,0 +1,16 @@
+{
+    "name": "KnockDetector",
+    "keywords": "piezo, knock, signal",
+    "description": "A non-blocking knock detection algorithm",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/funkyfisch/arduino-knock-detector"
+    },
+    "version": "1.0",
+    "examples": "examples/*/*.ino",
+    "frameworks": "arduino",
+    "platforms": [
+        "atmelavr",
+        "espressif"
+    ]
+}

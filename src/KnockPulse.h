@@ -3,14 +3,16 @@
 
 class KnockPulse {
     public:
+        KnockPulse();
         KnockPulse(int value, long time);
         double getKnockIntensity();
+        long getKnockLength();
         
-        int transientValue;
-        long pulseStartTime;
-        long pulseEndTime;
-        int valuesCount;
-        int valuesSum;
+        int mTransientValue = 0;
+        long mPulseStartTime = 0;
+        long mPulseEndTime = 0;
+        int mValuesCount = 0;
+        int mValuesSum = 0;
 };
 
 #endif
