@@ -1,9 +1,8 @@
 # Arduino Knock Detection Algorithm
 
-### A simple library for getting a single, filtered value for a "knock" event
+## A simple library for getting a single, filtered value for a "knock" event
 
-## Work in Progress - Watch the repo for follow-ups or contribute
-### Check source files for TODOs
+### Work in Progress - Watch the repo for follow-ups or contribute. Check bottom of README for TODOs
 
 This library provides a <b>non-blocking</b> way of processing the input from an analog input source, from a piezo/knock/vibration sensor. 
 
@@ -65,3 +64,16 @@ By using states and timers, this algorithm will detect a transient (peak) input 
 The advantages of this method is that instead of having raw values thrown out by the <i> analogRead </i> method, the algorithm returns a single value representing the entirety of a full knock event.
 
 Simply reading the raw values does not provide context or continuity (e.g. we do not know whether a random set of values refers to the same physical knock or are parts of different signals).
+
+ - [] Get rid of arduino platform dependencies
+ - [] Write unit tests
+// TODO: decouple algorithm from the entrypoint module
+// TODO: define readable state machines
+
+// TODO: exchange the "silence timeout" algorithm to a logic check
+// where a value followed by a bigger value is treated as a separate signal
+// TODO: handle micros() reset to 0
+// TODO: proper reassignment of _knockPulse object instead of having singleton
+// TODO: provide a calculation of the peak amplitude based on mVolts
+// TODO: use JLED library as a golden sample for ci and config
+// TODO: add entry for platform.io

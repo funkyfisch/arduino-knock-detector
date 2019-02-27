@@ -1,18 +1,5 @@
 #include "KnockAlgorithm.h"
 
-// TODO: get rid of arduino platform dependencies
-// TODO: write unit tests
-// TODO: decouple algorithm from the entrypoint module
-// TODO: define readable state machines
-
-// TODO: exchange the "silence timeout" algorithm to a logic check
-// where a value followed by a bigger value is treated as a separate signal
-// TODO: handle micros() reset to 0
-// TODO: proper reassignment of _knockPulse object instead of having singleton
-// TODO: provide a calculation of the peak amplitude based on mVolts
-// TODO: use JLED library as a golden sample for ci and config
-// TODO: add entry for platform.io
-
 KnockAlgorithm::KnockAlgorithm(int lowThreshold, int noiseThreshold, CALLBACK) {
     _reading = 0;
     _isAwaitingKnockTransient = true;
