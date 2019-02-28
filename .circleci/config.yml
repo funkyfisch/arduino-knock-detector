@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: debian:stretch
+      - image: jonathanschmalhofer/arduino-dev
 
     steps:
       - checkout
