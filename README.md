@@ -86,6 +86,7 @@ Simply reading the raw values does not provide context or continuity (e.g. we do
  - Exchange the "silence timeout" algorithm to a logic check
  - where a value followed by a bigger value is treated as a separate signal
  - Handle micros() reset to 0
+ - Handle AnalogRead sampling to avoid issues on ESP8266/NodeMCU
 
 ### CI
  - Add merge job on circle CI
@@ -94,10 +95,10 @@ Simply reading the raw values does not provide context or continuity (e.g. we do
 
 ### Documentation
  - ~~Publish library to Arduino Library Manager~~
+ - ~~Add keywords.txt for highlighting on Arduino IDE~~
  - Add entry for platform.io
  - Add example with two sensors at the same time (led array)
  - Add drawings/schematics
- - Add keywords.txt for highlighting on Arduino IDE
 
 ### Features
  - Provide a calculation of the peak amplitude based on mVolts
