@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: jonathanschmalhofer/arduino-dev
+      - image: circleci/rust:latest
 
     steps:
       - checkout
