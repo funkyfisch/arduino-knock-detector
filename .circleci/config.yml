@@ -10,8 +10,7 @@ jobs:
 
       - run:
           name: Download Arduino packages
-          command: apt install -y tar && \
-                    wget http://downloads.arduino.cc/arduino-1.8.8-linux64.tar.xz && \
+          command: wget http://downloads.arduino.cc/arduino-1.8.8-linux64.tar.xz && \
                     tar xf arduino-1.8.8-linux64.tar.xz
       - run:
           name: Verify library
