@@ -6,10 +6,10 @@
 # Datatypes (KEYWORD1)
 #######################################
 
-KnockDetector   KEYWORD1
+KnockDetector	KEYWORD1
 
 #######################################
 # Methods (KEYWORD2)
 #######################################
 
-loop    KEYWORD2
+loop	KEYWORD2
